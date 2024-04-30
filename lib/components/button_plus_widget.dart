@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calc/commons/types.dart';
 
 
 class ButtonPlusWidget extends StatelessWidget {
-  const ButtonPlusWidget({super.key});
+  const ButtonPlusWidget({super.key, required this.callback});
 
-
+  final ButtonEvent callback;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class ButtonPlusWidget extends StatelessWidget {
         height: 1);
 
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {callback('+');},
         style: btnStyle,
         child:const Column(
           mainAxisSize: MainAxisSize.min,

@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_calc/commons/types.dart';
 
 class ButtonWidget extends StatelessWidget {
-  const ButtonWidget({super.key, required this.text, this.filled = false });
+  const ButtonWidget({super.key, required this.text, this.filled = false, required this.callback });
 
   final String text;
   final bool filled;
+
+  final ButtonEvent callback;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class ButtonWidget extends StatelessWidget {
         height: 1);
 
     return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {callback(text);},
         style: btnStyle,
         child: Column(
           mainAxisSize: MainAxisSize.min,

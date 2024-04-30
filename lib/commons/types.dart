@@ -1,0 +1,1 @@
+typedef ButtonEvent = void Function(String text);

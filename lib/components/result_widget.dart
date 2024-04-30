@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_calc/commons/types.dart';
 import 'package:flutter_calc/components/button_widget.dart';
 
 class ResultWidget extends StatelessWidget {
-  const ResultWidget({super.key, required this.text});
+  const ResultWidget({super.key, required this.text, required this.callback});
 
   final String text;
+  final ButtonEvent callback;
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class ResultWidget extends StatelessWidget {
             height: 1),
       ),
       ElevatedButton(
-          onPressed: () {},
+          onPressed: () {callback('delete');},
           style: btnStyle,
           child: const Column(
             mainAxisSize: MainAxisSize.min,
